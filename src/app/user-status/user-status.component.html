@@ -1,0 +1,128 @@
+
+<div class="user-status">
+
+    <h2>My Status</h2>
+    <!-- ONLINE / OFFLINE STATUS -->
+    <div class="online-status">
+
+    <p>
+        <strong>Connection Status:</strong>
+        <span [class.online]="isOnline"
+              [class.offline]="!isOnline">
+            {{ isOnline ? 'Online' : 'Offline' }}
+        </span>
+    </p>
+
+    <button
+        type="button"
+        class="status-toggle"
+        (click)="toggleOnlineStatus()">
+        {{ isOnline ? 'Go Offline' : 'Go Online' }}
+    </button>
+
+</div>
+    @if (!isEditing) {
+
+        <div class="status-badge">
+            <span class="status-dot"></span>
+            {{ availability }}
+        </div>
+
+        <p>
+            <strong>Current Focus:</strong> {{ currentFocus }}
+        </p>
+
+        <p>
+            <strong>Experience:</strong> {{ experience }}
+        </p>
+
+        <p>
+            <strong>Learning:</strong> {{ learning }}
+        </p>
+
+        <button type="button" (click)="editStatus()">
+            Edit Status
+        </button>
+
+    } @else {
+
+        <form (ngSubmit)="saveStatus()">
+
+            <div class="form-group">
+                <label for="availability">Availability:</label>
+
+                <select
+                    id="availability"
+                    name="availability"
+                    [(ngModel)]="editAvailability"
+                    required>
+                    <option value="Available for Opportunities">
+                        Available for Opportunities
+                    </option>
+                    <option value="Currently Working">
+                        Currently Working
+                    </option>
+                    <option value="Open to Freelance">
+                        Open to Freelance
+                    </option>
+                    <option value="Busy Learning">
+                        Busy Learning
+                    </option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="currentFocus">Current Focus:</label>
+
+                <input
+                    id="currentFocus"
+                    type="text"
+                    name="currentFocus"
+                    [(ngModel)]="editCurrentFocus"
+                    required>
+            </div>
+
+            <div class="form-group">
+                <label for="experience">Experience:</label>
+
+                <input
+                    id="experience"
+                    type="text"
+                    name="experience"
+                    [(ngModel)]="editExperience"
+                    required>
+            </div>
+
+            <div class="form-group">
+                <label for="learning">Learning:</label>
+
+                <input
+                    id="learning"
+                    type="text"
+                    name="learning"
+                    [(ngModel)]="editLearning"
+                    required>
+            </div>
+
+            <div class="form-actions">
+
+                <button type="submit">
+                    Save Status
+                </button>
+
+                <button
+                    type="button"
+                    class="cancel-button"
+                    (click)="cancelEdit()">
+                    Cancel
+                </button>
+
+            </div>
+
+        </form>
+
+    }
+
+</div>
+
+

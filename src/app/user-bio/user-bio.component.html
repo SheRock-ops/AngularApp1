@@ -1,0 +1,110 @@
+
+<div class="bio-card">
+
+    <h2>About Me</h2>
+
+    @if (!isEditing) {
+
+        <p class="bio-description">
+            {{ bio }}
+        </p>
+
+        <h3>My Skills</h3>
+
+        <div class="skills-container">
+
+            @for (skill of skills; track $index) {
+                <span class="skill-badge">
+                    {{ skill }}
+                </span>
+            }
+
+        </div>
+
+        <button
+            type="button"
+            class="edit-bio-btn"
+            (click)="editAboutMe()">
+            Edit About Me
+        </button>
+
+    } @else {
+
+        <form (ngSubmit)="saveAboutMe()">
+
+            <div class="form-group">
+
+                <label for="bio">
+                    About Me:
+                </label>
+
+                <textarea
+                    id="bio"
+                    name="bio"
+                    [(ngModel)]="editBio"
+                    rows="5"
+                    required>
+                </textarea>
+
+            </div>
+
+            <h3>Edit My Skills</h3>
+
+            <div class="skills-container">
+
+                @for (skill of editSkills; track $index) {
+
+                    <span class="skill-badge editable-skill">
+
+                        {{ skill }}
+
+                        <button
+                            type="button"
+                            class="remove-skill"
+                            (click)="removeSkill($index)"
+                            [attr.aria-label]="'Remove ' + skill">
+                            ×
+                        </button>
+
+                    </span>
+
+                }
+
+            </div>
+
+            <div class="add-skill">
+
+                <input
+                    type="text"
+                    name="newSkill"
+                    [(ngModel)]="newSkill"
+                    placeholder="Enter a new skill">
+
+                <button
+                    type="button"
+                    (click)="addSkill()">
+                    Add Skill
+                </button>
+
+            </div>
+
+            <div class="form-actions">
+
+                <button type="submit">
+                    Save Changes
+                </button>
+
+                <button
+                    type="button"
+                    class="cancel-btn"
+                    (click)="cancelEdit()">
+                    Cancel
+                </button>
+
+            </div>
+
+        </form>
+
+    }
+
+</div>

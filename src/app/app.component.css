@@ -1,0 +1,209 @@
+
+/* =========================================
+   MAIN DASHBOARD
+========================================= */
+
+:host {
+    display: block;
+    width: 100%;
+    min-height: 100vh;
+    background: #f5f0f1;
+    color: #24344e;
+}
+
+/* =========================================
+   DASHBOARD CONTAINER
+========================================= */
+
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+header,
+.dashboard-header {
+    display: block;
+    width: 100%;
+    background: linear-gradient(
+        135deg,
+        #101d36 0%,
+        #28436b 100%
+    );
+    color: #ffffff;
+    text-align: center;
+    padding: 55px 25px;
+    border-bottom: 5px solid #c98f86;
+}
+
+.header-content {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.dashboard-label {
+    display: block;
+    color: #e8c3bc;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+header h1,
+.dashboard-header h1 {
+    color: #ffffff;
+    font-size: clamp(30px, 4vw, 46px);
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 20px;
+    letter-spacing: 0.5px;
+}
+
+header p,
+.dashboard-header p {
+    color: #e8c3bc;
+    font-size: 16px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+main,
+.dashboard-main {
+    display: block;
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+    padding: 65px 30px;
+    background: #f5f0f1;
+}
+
+/* =========================================
+   THREE-COLUMN DASHBOARD
+========================================= */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+    gap: 28px;
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   DASHBOARD SECTIONS
+========================================= */
+
+.dashboard-section {
+    display: block;
+    width: 100%;
+    min-width: 0;
+}
+
+/* =========================================
+   COMPONENT CARDS
+========================================= */
+
+app-user-card,
+app-user-status,
+app-user-bio {
+    display: block;
+    width: 100%;
+    min-width: 0;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer,
+.dashboard-footer {
+    display: block;
+    width: 100%;
+    background: #101d36;
+    color: #f5f0f1;
+    text-align: center;
+    padding: 25px 20px;
+    border-top: 4px solid #c98f86;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+}
+
+footer p,
+.dashboard-footer p {
+    margin: 0;
+}
+
+/* =========================================
+   TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .dashboard-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+    }
+
+    main,
+    .dashboard-main {
+        padding: 45px 25px;
+    }
+
+    header,
+    .dashboard-header {
+        padding: 45px 25px;
+    }
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 650px) {
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    main,
+    .dashboard-main {
+        padding: 30px 16px;
+    }
+
+    header,
+    .dashboard-header {
+        padding: 40px 20px;
+    }
+
+    header h1,
+    .dashboard-header h1 {
+        font-size: 30px;
+    }
+
+    header p,
+    .dashboard-header p {
+        font-size: 14px;
+    }
+
+    footer,
+    .dashboard-footer {
+        padding: 20px 15px;
+        font-size: 12px;
+    }
+}

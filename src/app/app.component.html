@@ -1,0 +1,82 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+
+
+<div class="dashboard-container">
+
+    <!-- DASHBOARD HEADER -->
+    <header class="dashboard-header">
+        <div class="header-content">
+            <span class="dashboard-label">MY ANGULAR PROJECT</span>
+
+            <h1>User Profile Dashboard</h1>
+
+            <!-- ONLINE/OFFLINE STATUS -->
+            <p class="header-status">
+                <span [class.online]="isOnline"
+                      [class.offline]="!isOnline">
+                    ● {{ isOnline ? 'Online' : 'Offline' }}
+                </span>
+            </p>
+
+            <p>
+                Welcome to my Angular application!
+                Explore my profile, current status, and skills.
+            </p>
+        </div>
+    </header>
+
+    <!-- DASHBOARD COMPONENTS -->
+    <main class="dashboard-main">
+
+        <div class="dashboard-grid">
+
+            <!-- USER PROFILE -->
+            <section class="dashboard-section">
+                <app-user-card [isOnline]="isOnline"></app-user-card>
+            </section>
+
+            <!-- USER STATUS -->
+            <section class="dashboard-section">
+                <app-user-status
+                    (onlineStatusChange)="updateOnlineStatus($event)">
+                </app-user-status>
+            </section>
+
+            <!-- USER BIO -->
+            <section class="dashboard-section">
+                <app-user-bio></app-user-bio>
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- DASHBOARD FOOTER -->
+    <footer class="dashboard-footer">
+        <p>
+            User Profile Dashboard | Built with Angular
+        </p>
+    </footer>
+
+</div>
+
+
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+
+

@@ -1,0 +1,248 @@
+
+/* =========================================
+   ABOUT ME CARD
+========================================= */
+
+:host {
+    display: block;
+    width: 100%;
+}
+
+.bio-card {
+    width: 100%;
+    min-width: 0;
+    padding: 40px 28px;
+    background: #ffffff;
+    color: #24344e;
+    text-align: center;
+    border-top: 5px solid #c98f86;
+    border-radius: 18px;
+    box-shadow: 0 15px 35px rgba(16, 29, 54, 0.12);
+}
+
+/* =========================================
+   HEADINGS
+========================================= */
+
+.bio-card h2 {
+    font-size: 27px;
+    font-weight: 700;
+    color: #101d36;
+    margin: 15px 0 28px;
+}
+
+.bio-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #101d36;
+    margin: 30px 0 18px;
+}
+
+/* =========================================
+   BIO DESCRIPTION
+========================================= */
+
+.bio-description {
+    font-size: 16px;
+    line-height: 1.9;
+    color: #28436b;
+    margin: 0 0 25px;
+    overflow-wrap: anywhere;
+    white-space: pre-line;
+}
+
+/* =========================================
+   SKILLS
+========================================= */
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0 30px;
+}
+
+.skill-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 15px;
+    background: #f5e9e7;
+    color: #28436b;
+    border: 1px solid #e8c3bc;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    transition: all 0.3s ease;
+}
+
+.skill-badge:hover {
+    background: #e8c3bc;
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.bio-card button {
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.edit-bio-btn,
+.form-actions button,
+.add-skill button {
+    background: #101d36;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 13px 20px;
+    font-size: 14px;
+}
+
+.edit-bio-btn:hover,
+.form-actions button:hover,
+.add-skill button:hover {
+    background: #28436b;
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   EDIT FORM
+========================================= */
+
+.form-group {
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 700;
+    color: #101d36;
+    margin-bottom: 10px;
+}
+
+.form-group textarea,
+.add-skill input {
+    width: 100%;
+    min-width: 0;
+    padding: 13px;
+    font-size: 15px;
+    color: #24344e;
+    background: #f9f6f7;
+    border: 1px solid #e5dce1;
+    border-radius: 8px;
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 130px;
+}
+
+.form-group textarea:focus,
+.add-skill input:focus {
+    border-color: #c98f86;
+    box-shadow: 0 0 0 3px rgba(201, 143, 134, 0.15);
+}
+
+/* =========================================
+   EDITABLE SKILLS
+========================================= */
+
+.editable-skill {
+    background: #f5e9e7;
+    border-color: #c98f86;
+}
+
+.remove-skill {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 22px;
+    height: 22px;
+    background: #c98f86;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.remove-skill:hover {
+    background: #a96e67;
+}
+
+/* =========================================
+   ADD NEW SKILL
+========================================= */
+
+.add-skill {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 25px 0;
+}
+
+.add-skill input {
+    flex: 1 1 150px;
+}
+
+.add-skill button {
+    flex: 0 0 auto;
+}
+
+/* =========================================
+   SAVE AND CANCEL BUTTONS
+========================================= */
+
+.form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.form-actions .cancel-btn {
+    background: #ffffff;
+    color: #101d36;
+    border: 1px solid #c98f86;
+}
+
+.form-actions .cancel-btn:hover {
+    background: #f5e9e7;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 650px) {
+
+    .bio-card {
+        padding: 30px 20px;
+    }
+
+    .bio-card h2 {
+        font-size: 24px;
+    }
+
+    .bio-description {
+        font-size: 15px;
+    }
+
+    .add-skill {
+        flex-direction: column;
+    }
+
+    .add-skill button {
+        width: 100%;
+    }
+}

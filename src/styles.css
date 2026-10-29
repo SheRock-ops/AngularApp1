@@ -1,0 +1,59 @@
+
+/* =========================================
+   GLOBAL STYLING
+========================================= */
+
+:root {
+    --midnight: #101d36;
+    --navy: #28436b;
+    --rose-gold: #c98f86;
+    --soft-rose: #e8c3bc;
+    --pearl: #f5f0f1;
+    --white: #ffffff;
+    --text: #24344e;
+    --muted: #65738a;
+    --border: #e5dce1;
+    --shadow: 0 15px 35px rgba(16, 29, 54, 0.12);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--pearl);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--rose-gold);
+    outline-offset: 3px;
+}
+
+::selection {
+    background: var(--rose-gold);
+    color: var(--midnight);
+}
